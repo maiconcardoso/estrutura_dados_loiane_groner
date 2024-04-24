@@ -10,15 +10,6 @@ public class Vetor {
         this.tamanho = 0;
     }
 
-    /* public void adiciona(String elemento) {
-        for (int i=0; i<this.elementos.length; i++) {
-            if (this.elementos[i] == null) {
-                elementos[i] = elemento;
-                break;
-            }
-        }
-    } */
-
     public boolean adiciona(String elemento) {
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = elemento;
@@ -27,5 +18,31 @@ public class Vetor {
         }
         System.err.println("Não foi possível adicionar o último elemento, excede a capacidade do vertor.");
         return false;
+    }
+
+    public String buscar(int position) {
+        if (!(position >=0 && position < tamanho)) {
+            throw new IllegalArgumentException("Posição Inválida!");
+        }
+        return this.elementos[position];
+    }
+
+    public int tamanho() {
+        return this.tamanho;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        string.append("[");
+        for(int i=0; i<elementos.length-1; i++) {
+            string.append(elementos[i]);
+            string.append(", ");
+        }
+        if (this.tamanho > 0) string.append(this.elementos[this.tamanho-1]);
+
+        string.append("]");
+
+        return string.toString();
     }
 }
