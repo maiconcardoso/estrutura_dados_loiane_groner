@@ -27,6 +27,17 @@ public class Vetor {
         return this.elementos[position];
     }
 
+    public int buscar(String elemento) {
+
+        // Busca Sequencial
+        for (int i=0; i<elementos.length; i++) {
+            if (elementos[i].equals(elemento)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public int tamanho() {
         return this.tamanho;
     }
