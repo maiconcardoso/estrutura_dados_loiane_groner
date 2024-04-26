@@ -20,11 +20,24 @@ public class Vetor {
         return false;
     }
 
-    public String buscar(int position) {
-        if (!(position >=0 && position < tamanho)) {
+    public boolean adiciona(int posicao, String elemento) {
+        if (!(posicao >= 0 && posicao < this.tamanho)) {
+            throw new IllegalArgumentException("Posição Inválida!");
+        } 
+        for (int i=(this.tamanho-1); i>=posicao; i--) {
+            this.elementos[i+1] = this.elementos[i]; 
+        }
+        this.elementos[posicao] = elemento;
+        this.tamanho++;
+
+        return true;
+    }
+
+    public String buscar(int posicao) {
+        if (!(posicao >=0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posição Inválida!");
         }
-        return this.elementos[position];
+        return this.elementos[posicao];
     }
 
     public int buscar(String elemento) {
@@ -46,14 +59,16 @@ public class Vetor {
     public String toString() {
         StringBuilder string = new StringBuilder();
         string.append("[");
-        for(int i=0; i<elementos.length-1; i++) {
+        for(int i=0; i<this.tamanho-1; i++) {
             string.append(elementos[i]);
             string.append(", ");
         }
-        if (this.tamanho > 0) string.append(this.elementos[this.tamanho-1]);
+        if (this.tamanho > 0) {
+            string.append(this.elementos[this.tamanho-1]);
+        }
 
         string.append("]");
-
+        
         return string.toString();
     }
 }
