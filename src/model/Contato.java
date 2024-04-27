@@ -6,6 +6,12 @@ public class Contato {
     private String telefone;
     private String email;
 
+    public Contato(String nome, String telefone, String email) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
+    }
+
     public String getNome() {
         return this.nome;
     }
@@ -32,7 +38,7 @@ public class Contato {
 
     @Override
     public String toString() {
-        return "[Nome: " + this.nome + ", Telefone: " + this.telefone + ", Email: " + this.email + "]\n";
+        return "\n[Nome: " + this.nome + ", Telefone: " + this.telefone + ", Email: " + this.email + "]";
     }
 
     @Override
