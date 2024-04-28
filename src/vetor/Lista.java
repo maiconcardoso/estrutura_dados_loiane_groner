@@ -81,6 +81,17 @@ public class Lista<T> {
         return -1;
     }
 
+    public boolean contem(T elemento) {
+
+        //Busca Sequencial
+        for (int i=0; i<this.tamanho-1; i++) {
+            if (this.elementos[i].equals(elemento)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public int tamanho() {
         return this.tamanho;
     }
