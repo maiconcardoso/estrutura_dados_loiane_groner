@@ -4,10 +4,17 @@ public class Lista<T> {
 
     public T[] elementos;
     public int tamanho;
+    public final int CAPACIDADE_INICIAL = 10;
 
     @SuppressWarnings("unchecked")
-    public Lista(int capacidade) {
-        this.elementos = (T[]) new Object[capacidade];
+    public Lista(int novaCapacidade) {
+        this.elementos = (T[]) new Object[novaCapacidade];
+        this.tamanho = 0;
+    }
+
+    @SuppressWarnings("unchecked")
+    public Lista() {
+        this.elementos = (T[]) new Object[this.CAPACIDADE_INICIAL];
         this.tamanho = 0;
     }
 
@@ -111,6 +118,12 @@ public class Lista<T> {
             throw new IllegalArgumentException("Posição Inválida!");
         }   
         return true;
+    }
+
+    @SuppressWarnings("unchecked")
+    public void limpar() {
+        T[] novalista = (T[]) new Object[this.CAPACIDADE_INICIAL];
+        this.elementos = novalista;
     }
 
     @Override
