@@ -92,6 +92,16 @@ public class Lista<T> {
         return false;
     }
 
+    public int ultimoIndice(T elemento) {
+        int indice = -1;
+        for (int i=0; i<this.tamanho -1; i++) {
+            if (elementos[i].equals(elemento)) {
+                indice = i;
+            }
+        }
+        return indice;
+    }
+
     public int tamanho() {
         return this.tamanho;
     }
