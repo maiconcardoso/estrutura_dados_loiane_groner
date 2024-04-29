@@ -20,7 +20,7 @@ public class Lista<T> {
 
     public boolean adiciona(T elemento) {
         aumentarCapacidade();
-        
+
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = elemento;
             this.tamanho++;
@@ -35,8 +35,8 @@ public class Lista<T> {
 
         aumentarCapacidade();
 
-        for (int i=(this.tamanho-1); i>=posicao; i--) {
-            this.elementos[i+1] = this.elementos[i]; 
+        for (int i = (this.tamanho - 1); i >= posicao; i--) {
+            this.elementos[i + 1] = this.elementos[i];
         }
         this.elementos[posicao] = elemento;
         this.tamanho++;
@@ -47,8 +47,8 @@ public class Lista<T> {
     public void remover(int posicao) {
         this.posicaoValida(posicao);
 
-        for (int i=posicao; i<this.tamanho-1; i++) {
-            this.elementos[i] = elementos[i+1];
+        for (int i = posicao; i < this.tamanho - 1; i++) {
+            this.elementos[i] = elementos[i + 1];
         }
         this.tamanho--;
     }
@@ -57,14 +57,14 @@ public class Lista<T> {
         int posicao = this.buscar(elemento);
         if (posicao > -1) {
             this.remover(posicao);
-        } 
-    }   
+        }
+    }
 
     @SuppressWarnings("unchecked")
     private void aumentarCapacidade() {
         if (this.tamanho == this.elementos.length) {
             T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
-            for (int i=0; i<this.elementos.length; i++) {
+            for (int i = 0; i < this.elementos.length; i++) {
                 elementosNovos[i] = elementos[i];
             }
             elementos = elementosNovos;
@@ -80,7 +80,7 @@ public class Lista<T> {
     public int buscar(T elemento) {
 
         // Busca Sequencial
-        for (int i=0; i<this.tamanho-1; i++) {
+        for (int i = 0; i < this.tamanho - 1; i++) {
             if (elementos[i].equals(elemento)) {
                 return i;
             }
@@ -89,19 +89,12 @@ public class Lista<T> {
     }
 
     public boolean contem(T elemento) {
-
-        //Busca Sequencial
-        for (int i=0; i<this.tamanho-1; i++) {
-            if (this.elementos[i].equals(elemento)) {
-                return true;
-            }
-        }
-        return false;
+        return this.buscar(elemento) > -1;
     }
 
     public int ultimoIndice(T elemento) {
         int indice = -1;
-        for (int i=0; i<this.tamanho -1; i++) {
+        for (int i = this.tamanho - 1; i >= 0 - 1; i--) {
             if (elementos[i].equals(elemento)) {
                 indice = i;
             }
@@ -116,7 +109,7 @@ public class Lista<T> {
     private boolean posicaoValida(int posicao) {
         if (!(posicao > 0 && posicao <= this.tamanho)) {
             throw new IllegalArgumentException("Posição Inválida!");
-        }   
+        }
         return true;
     }
 
@@ -130,16 +123,16 @@ public class Lista<T> {
     public String toString() {
         StringBuilder string = new StringBuilder();
         string.append("[");
-        for(int i=0; i<this.tamanho-1; i++) {
+        for (int i = 0; i < this.tamanho - 1; i++) {
             string.append(elementos[i]);
             string.append(", ");
         }
         if (this.tamanho > 0) {
-            string.append(this.elementos[this.tamanho-1]);
+            string.append(this.elementos[this.tamanho - 1]);
         }
 
         string.append("]");
-        
+
         return string.toString();
     }
 }
