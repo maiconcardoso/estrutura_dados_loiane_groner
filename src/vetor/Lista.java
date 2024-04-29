@@ -115,7 +115,7 @@ public class Lista<T> {
 
     @SuppressWarnings("unchecked")
     public void limpar() {
-        T[] novalista = (T[]) new Object[this.CAPACIDADE_INICIAL];
+        T[] novalista = (T[]) new Object[this.elementos.length];
         this.elementos = novalista;
     }
 
