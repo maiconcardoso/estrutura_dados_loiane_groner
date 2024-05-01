@@ -131,7 +131,7 @@ public class Lista<T> {
             string.append(this.elementos[this.tamanho - 1]);
         }
 
-        string.append("]");
+        string.append("\n]");
 
         return string.toString();
     }
