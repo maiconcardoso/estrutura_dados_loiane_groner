@@ -26,5 +26,9 @@ public class Pilha<T> extends EstruturaEstatica<T> {
         }
         return this.elementos[this.tamanho-1];
     }
+
+    public T desempilha() {
+        return this.elementos[--tamanho];
+    }
 }
 
