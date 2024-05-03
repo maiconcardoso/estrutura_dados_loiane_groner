@@ -18,7 +18,6 @@ public class Exercicio01 {
                 System.out.println("Empilhando o numero: " + num);
                 pilha.empilha(num);
             } else {
-                
                 if (pilha.estaVazia()) {
                     System.out.println("A pilha está vazia");
                 } else {
