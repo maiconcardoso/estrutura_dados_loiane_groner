@@ -41,7 +41,7 @@ public class EstruturaEstatica<T> {
         return true;
     }
 
-    protected boolean estaVazia() {
+    public boolean estaVazia() {
         return this.tamanho == 0;
     }
 
