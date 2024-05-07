@@ -61,10 +61,19 @@ public class EstruturaEstatica<T> {
     }
 
     private boolean posicaoValida(int posicao) {
-        if (!(posicao > 0 && posicao <= this.tamanho)) {
+        if (!(posicao >= 0 && posicao <= this.tamanho)) {
             throw new IllegalArgumentException("Posição Inválida!");
         }
         return true;
+    }
+
+    public void remover(int posicao) {
+        this.posicaoValida(posicao);
+
+        for (int i = posicao; i < this.tamanho - 1; i++) {
+            this.elementos[i] = elementos[i + 1];
+        }
+        this.tamanho--;
     }
 
     @Override

@@ -12,7 +12,7 @@ public class Aula18 {
         fila.enfileirar(4);
         
         System.out.println(fila.tamanho());
-        System.out.println(fila);    
+        System.out.println(fila.espiar());    
         
     }
 
