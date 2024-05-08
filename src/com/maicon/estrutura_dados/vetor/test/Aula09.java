@@ -1,6 +1,6 @@
-package com.maicon.estrutura_dados.vetor.test;
-import com.maicon.estrutura_dados.model.Contato;
-import com.maicon.estrutura_dados.vetor.Lista;
+package vetor.test;
+import model.Contato;
+import vetor.Lista;
 
 public class Aula09 {
     public static void main(String[] args) {

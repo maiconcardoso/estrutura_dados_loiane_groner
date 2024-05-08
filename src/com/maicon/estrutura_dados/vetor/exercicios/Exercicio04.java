@@ -1,9 +1,9 @@
-package com.maicon.estrutura_dados.vetor.exercicios;
+package vetor.exercicios;
 
 import java.util.Scanner;
 
-import com.maicon.estrutura_dados.model.Contato;
-import com.maicon.estrutura_dados.vetor.Lista;
+import model.Contato;
+import vetor.Lista;
 
 public class Exercicio04 {
     public static void main(String[] args) {
