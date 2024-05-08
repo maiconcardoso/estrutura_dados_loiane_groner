@@ -2,7 +2,7 @@ package fila.exercicios;
 
 import fila.FilaComPrioridade;
 
-public class Execicio03 {
+public class Exercicio03 {
 
     public static final int VERDE = 2;
     public static final int AMARELO = 1;
