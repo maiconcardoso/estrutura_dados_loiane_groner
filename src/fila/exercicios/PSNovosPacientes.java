@@ -23,7 +23,7 @@ public class PSNovosPacientes implements Runnable {
             try {
                 Thread.sleep(6000);
                 fila.enfileirar(pessoa);
-                System.out.println("Pessoa enfileirada.");
+                System.out.println(pessoa + "Pessoa enfileirada.");
                 count++;
             } catch (InterruptedException e) {
                 e.printStackTrace();
