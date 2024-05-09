@@ -7,6 +7,8 @@ public class ListaEncadeadaTest {
         ListaEncadeada<Integer> lista = new ListaEncadeada<>();
 
         lista.adicionar(1);
+        lista.adicionar(2);
+        lista.adicionar(3);
 
         System.out.println("Tamanho = " + lista.getTamanho());
         System.out.println(lista);
