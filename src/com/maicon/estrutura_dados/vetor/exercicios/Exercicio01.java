@@ -1,6 +1,6 @@
-package vetor.exercicios;
+package com.maicon.estrutura_dados.vetor.exercicios;
 
-import vetor.Lista;
+import com.maicon.estrutura_dados.vetor.Lista;
 
 public class Exercicio01 {
     

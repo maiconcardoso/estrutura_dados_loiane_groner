@@ -1,6 +1,6 @@
-package vetor.test;
+package com.maicon.estrutura_dados.vetor.test;
 
-import vetor.Vetor;
+import com.maicon.estrutura_dados.vetor.Vetor;
 
 public class Aula03 {
     public static void main(String[] args) {
