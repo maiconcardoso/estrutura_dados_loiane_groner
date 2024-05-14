@@ -6,6 +6,7 @@ public class ListaEncadeada<T> {
     private No<T> ultimo;
     private int tamanho;
     private final int NAO_ENCONTRADO = -1;
+    private final String NAO_EXISTE = "Posição não existe.";
 
     public void adicionar(T elemento) {
         No<T> celula = new No<T>(elemento);
@@ -60,8 +61,42 @@ public class ListaEncadeada<T> {
         return removido;
     }
 
+    public T removerFinal() {
+        if (this.tamanho == 0) {
+            throw new RuntimeException("Lista está vazia.");
+        }
+        if (this.tamanho == 1) {
+            return this.removerInicio();
+        }
+        No<T> penultimoNo = this.buscarPorPosicao(this.tamanho - 2);
+        T removido = penultimoNo.getProximo().getElemento();
+        penultimoNo.setProximo(null);
+        this.ultimo = penultimoNo;
+        this.tamanho--;
+
+        return removido;
+    }
+
+    public T remover(int posicao) {
+        if (this.posicaoNaoExiste(posicao)) throw new IllegalArgumentException(NAO_EXISTE);
+        if (posicao == 0) this.removerInicio();
+        if (posicao == this.tamanho -1) this.removerFinal();
+        
+        No<T> noAnterior = this.buscarPorPosicao(posicao);
+        No<T> atual = noAnterior.getProximo();
+        No<T> proximo = atual.getProximo();
+        noAnterior.setProximo(proximo);
+        atual.setProximo(null);
+        this.tamanho--;
+        return null;
+    }
+
     public int getTamanho() {
         return this.tamanho;
+    }
+
+    public boolean posicaoNaoExiste(int posicao) {
+        return (!(posicao > 0 || this.tamanho <= -1 ));
     }
 
     public No<T> buscarPorPosicao(int posicao) {
